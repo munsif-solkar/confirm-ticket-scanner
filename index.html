@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Confirm ticket scanner</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+	<header class="shadow text-blue-600 px-5 py-7 flex flex-col bg-white">
+		<p class="font-medium text-2xl">Confirm Ticket Scanner</p>
+		<p class="text-gray-500">Find confirm train tickets</p>
+	</header>
+
+	<div class="container-sm mx-auto my-0 sm:my-10 max-w-[900px] bg-white p-5 ring-1 ring-gray-300 sm:rounded-lg">
+			<h2 class="text-[20px]">Find confirm tickets</h2>
+			<div class="search-input my-3">
+				<form class="search-form" method="get" action='confirmTickets.html'>
+					<section class="flex gap-2 flex-wrap sm:flex-nowrap">
+					<div class="input-box w-full">
+						<label for="source" class="block mb-2 text-gray-600">Departure</label>
+					<input type="text" name="source" placeholder="From" class="outline-none py-3 px-2 ring-1 ring-gray-300 focus:ring-blue-500 w-full" id="source" required>
+					</div>
+					<div class="input-box w-full">
+						<label for="destination" class="block mb-2 text-gray-600">Arrival</label>
+					<input type="text" name="destination" placeholder="To" class="outline-none py-3 px-2 ring-1 ring-gray-300 focus:ring-blue-500 w-full" id="destination" required>
+					</div>
+					<div class="input-box w-full">
+						<label for="date" class="block mb-2 text-gray-600">Journey date</label>
+					<input type="date" name="date" placeholder="To" class="outline-none py-3 px-2 ring-1 ring-gray-300 focus:ring-blue-500 w-full" id="date" required>
+					</div>
+					<div class="input-box w-full">
+						<label for="quota" class="block mb-2 text-gray-600">Select quota</label>
+					<select class="outline-none py-3 px-2 ring-1 ring-gray-300 focus:ring-blue-500 w-full bg-white h-[50px]" id="quota" name="quota">
+						<option value="GN" selected>GENERAL</option>
+						<option value="TQ">TATKAL</option>
+					</select>
+					</div>
+				</section>
+				<button  type="submit" class="bg-blue-600 text-white w-full p-3 font-medium mt-5">Search</button>
+
+				</form>
+				
+			</div>
+
+
+			<div class="data-container mt-5">
+				
+			</div>
+	</div>
+<!-- 
+<script src="scanner.js"></script>
+<script src="main.js"></script> -->
+
+</body>
+</html>
