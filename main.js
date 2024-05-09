@@ -54,7 +54,7 @@ const renderData = (data) => {
     container.innerHTML = ''
     data.forEach(train => {
         const dataCard = document.createElement('div');
-        dataCard.classList.add('border', 'p-4', 'sm:mb-4', 'sm:rounded', 'bg-white','shadow');
+        dataCard.classList.add('border', 'p-4', 'sm:mb-4', 'sm:rounded', 'bg-white','sm:shadow');
 
         const trainName = document.createElement('h2');
         trainName.textContent = `${train.trainName} - ${train.trainNum}`;
