@@ -73,9 +73,9 @@ const renderData = (data) => {
         	const fare = train.availableClasses[Class]['fare']
             listItem.innerHTML = `
           	<div class='train-class flex flex-col gap-3 py-2 px-4 ring-1 ring-gray-200'>
-            <p class='text-blue-800 text-sm font-medium rounded dark:bg-blue-900 dark:text-blue-300'>${Class}</p>
-            <p class="text-green-800 text-sm font-medium rounded dark:bg-green-900 dark:text-green-300">${availableSeats}</p>
-            <p class="text-gray-800 text-sm font-medium rounded dark:bg-green-900 dark:text-gray-700">&#8377;${fare}</p>
+            <p class='text-blue-800 text-sm font-medium rounded'>${Class}</p>
+            <p class="text-green-800 text-sm font-medium rounded">${availableSeats}</p>
+            <p class="text-gray-800 text-sm font-medium rounded">&#8377;${fare}</p>
             </div>`;
             availableClasses.appendChild(listItem);
         })
