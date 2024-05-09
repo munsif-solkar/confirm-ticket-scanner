@@ -53,7 +53,7 @@ const renderData = (data) => {
     quota_display.textContent = quota;
     data.forEach(train => {
         const dataCard = document.createElement('div');
-        dataCard.classList.add('border', 'p-4', 'mb-4', 'rounded', 'bg-white','shadow');
+        dataCard.classList.add('border', 'p-4', 'mb-4', 'sm:rounded', 'bg-white','shadow');
 
         const trainName = document.createElement('h2');
         trainName.textContent = `${train.trainName} - ${train.trainNum}`;
