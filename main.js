@@ -23,15 +23,17 @@ window.onload = async () => {
     const trainsData = new TrainsData(source, destination, date_of_journey,quota);
 
     const confirmTrains = await trainsData.findConfirmTicktes();
+    source = trainsData.search_data.source.stationName;
+        destination = trainsData.search_data.destination.stationName;
     if (!confirmTrains.error) {
         // Assuming source and destination are input fields
-        source = trainsData.search_data.source.stationName;
-        destination = trainsData.search_data.destination.stationName;
+  
         renderData(confirmTrains.trainsWithConfirmTickets);
     } else {
         // Assuming container is a DOM element where you want to display the error message
-        container.innerText = confirmTrains.message;
+        container.innerHTML = `<p class='text-center'>${confirmTrains.message}</p>`;
     }
+    setSearchData()
 };
 
 
@@ -41,19 +43,18 @@ const convertDateFormat = (date)=> {
     return formattedDate
 }
 
-const renderData = (data) => {
-    if(data.length < 1){
-    	container.innerText = 'Confirm tickets not available'
-    	return
-    }
-    container.innerHTML = ''
-    source_display.textContent = source;
+const setSearchData = ()=>{
+	   source_display.textContent = source;
     destination_display.textContent = destination;
     date_display.textContent = date_of_journey;
     quota_display.textContent = quota;
+}
+
+const renderData = (data) => {
+    container.innerHTML = ''
     data.forEach(train => {
         const dataCard = document.createElement('div');
-        dataCard.classList.add('border', 'p-4', 'mb-4', 'sm:rounded', 'bg-white','shadow');
+        dataCard.classList.add('border', 'p-4', 'sm:mb-4', 'sm:rounded', 'bg-white','shadow');
 
         const trainName = document.createElement('h2');
         trainName.textContent = `${train.trainName} - ${train.trainNum}`;

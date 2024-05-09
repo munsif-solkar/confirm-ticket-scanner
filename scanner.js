@@ -86,6 +86,10 @@ class TrainsData {
 
         })
 
+        if(this.confirms.length == 0){
+            return {error:true,message:'Confirm tickets not available'}
+        }
+
         return results
     }
     
